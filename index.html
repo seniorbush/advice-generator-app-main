@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Advice generator app</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="card">
+        <div class="adviceID">ADVICE #</div>
+        <div class="adviceBody"></div>
+        <div class="adviceBorder"></div>
+        <!-- call api -->
+        <button onclick="getAdvice()">
+          <img src="./images/icon-dice.svg" alt="#" />
+        </button>
+      </div>
+    </main>
+  </body>
+  <script>
+    //access html elements
+    const id = document.querySelector(".adviceID");
+    const advice = document.querySelector(".adviceBody");
+
+    //function call to api
+    //append response to card element
+    const getAdvice = () => {
+      fetch("https://api.adviceslip.com/advice")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          id.innerHTML = data.slip.id;
+          advice.innerHTML = `"${data.slip.advice}"`;
+        });
+    };
+
+    //call to api on load
+    getAdvice();
+  </script>
+</html>

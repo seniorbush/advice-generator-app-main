@@ -16,10 +16,12 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/seniorbush/results-summary-component-main)
+- Live Site URL: [Add live site URL here](https://dancing-biscuit-4a8083.netlify.app/)
 
 ### Built with
 
 - Semantic HTML5 markup
 - Flexbox
+- JS
+- Fetch API
